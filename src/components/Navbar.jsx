@@ -1,12 +1,8 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon, UserIcon } from "@heroicons/react/24/solid";
 
-const Navbar = () => {
-  const [user, setUser] = useState({
-    name: "John Doe",
-  });
-
+const Navbar = ({ name }) => {
   return (
     <nav className="bg-blue-600 p-4">
       <div className="container mx-auto flex justify-between items-center">
@@ -16,7 +12,7 @@ const Navbar = () => {
             <div>
               <Menu.Button className="inline-flex justify-center w-full rounded-md px-4 py-2 bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                 <UserIcon className="w-5 h-5 mr-2" aria-hidden="true" />
-                {user.name}
+                {name}
                 <ChevronDownIcon className="w-5 h-5 ml-2" aria-hidden="true" />
               </Menu.Button>
             </div>

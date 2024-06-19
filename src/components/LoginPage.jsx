@@ -19,7 +19,7 @@ const LoginPage = ({ onLoginSuccess }) => {
 
     const data = await response.json();
     if (response.ok) {
-      onLoginSuccess(data.token);
+      onLoginSuccess(data.token, data.session_id, data.name);
     } else {
       setError(data.message || "Login failed");
     }
